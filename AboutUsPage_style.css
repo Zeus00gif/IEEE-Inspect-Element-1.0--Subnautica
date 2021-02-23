@@ -1,0 +1,269 @@
+.aboutus_title_image{
+	background: linear-gradient(rgba(22,181,242,0.1),rgba(0,0,0,0.3)), url('coral2.jpg');
+	background-position: center 80%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 105px;
+	padding-bottom: 20px;
+	border-bottom: 3px solid #000;
+}
+
+.aboutus_page_title{
+	color: #fff;
+	padding-left: 10%;
+	font-size: 400%;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.aboutus_info{
+	background: #000;
+	height: 100%;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+.abotus_title{
+	font-size: 380%;
+	font-weight: bold;
+	background: /*#007bff*/#ffc107;
+	border-radius: 2px;
+	width: 60%;
+}
+
+.abotus_text{
+	font-size: 180%;
+	color: #fff;
+}
+
+.aboutus_img_col{
+	border: 10px solid #fff;
+}
+
+.strip_bg{
+	background: linear-gradient(rgba(22,181,242,0.1),rgba(0,0,0,0.3)), url('texture7.jpg');
+	background-position: center 80%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.our_products{
+	background: #000;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+.our_products_title{
+	color: #ffc107;
+	font-size: 400%;
+	/*color: #fff;*/
+}
+.our_products_text{
+	font-size: 180%;
+	color: #fff;
+}
+
+.imagebg{
+ 	background: url('noah2.jpg');
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ 	background-position: center 40%;
+ 	position: relative;
+}
+  
+.innerrow{
+	margin: 0;
+	width: 100%;
+	height: 450px;
+}
+.leftoverlaycol{
+	padding: 0;
+	position: relative;
+}
+
+.leftoverlay{
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	right: 0;
+	background-color: rgba(227,20,82,0.8)/*#ffc107*/;
+	width: 100%;
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+	transform-origin: left;
+	transform: scaleX(1);
+}
+.rightoverlaycol{
+	padding: 0;
+	position: relative;
+}
+
+
+.rightoverlay{
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	background-color: rgba(227,20,82,0.8)/*#ffc107*/;
+	width: 100%;
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+	transform-origin: right;
+	transform: scaleX(1);
+}
+
+.overlayborder{
+	border: 4px solid #000;
+	height: 100%;
+}
+
+.innerrow:hover .leftoverlay{
+	transform: scaleX(0);
+}
+
+.innerrow:hover .rightoverlay{	
+	transform: scaleX(0);
+}
+
+.footerclass{
+  background-color: #000;
+  color: #fff;
+  padding-top: 2%;
+
+}
+
+.light{
+  border-top: 1px solid #d5d5d5;
+  width: 75%; 
+}
+
+.endlight{
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+}
+
+
+@media(max-width: 1210px){
+	.abotus_title{
+		font-size: 350%;
+	}
+
+	.abotus_text{
+		font-size: 160%;
+	}	
+}
+@media(max-width: 1000px){
+	
+	.home_page_title{
+		font-size: 350%;
+	}
+
+	.abotus_title{
+		font-size: 250%;
+	}
+
+	.abotus_text{
+		font-size: 120%;
+	}
+}
+
+@media(max-width: 772px){
+	
+	.home_page_title{
+		font-size: 300%;
+	}
+
+	.abotus_title{
+		font-size: 200%;
+	}
+
+	.abotus_text{
+		font-size: 140%;
+	}
+
+	.our_products_title{
+		font-size: 300%;
+	}
+
+	.our_products_text{
+		font-size: 160%;
+	}
+}
+
+@media(max-width: 625px){
+	
+	.abotus_title{
+		font-size: 170%;
+	}
+
+	.our_products_title{
+		font-size: 260%;
+	}
+
+	.our_products_text{
+		font-size: 150%;
+	}
+}
+
+@media(max-width: 537px){
+
+	.our_products_title{
+		font-size: 230%;
+	}
+
+	.our_products_text{
+		font-size: 120%;
+	}
+}
+
+@media(max-width: 508px){
+	
+	.abotus_title{
+		font-size: 170%;
+	}
+
+	.abotus_text{
+		font-size: 120%;
+	}
+
+	.innerrow{
+		height: 300px;
+	}
+
+}
+
+@media(max-width: 416px){
+	
+	.home_page_title{
+		font-size: 250%;
+	}
+
+	.abotus_title{
+		font-size: 130%;
+	}
+
+	.abotus_text{
+		font-size: 110%;
+	}
+}
+
+@media(max-width: 330px){
+	
+	.abotus_title{
+		width: 100%;
+	}
+
+	.innerrow{
+		height: 280px;
+	}
+
+	.our_products_title{
+		font-size: 180%;
+	}
+
+	.our_products_text{
+		font-size: 120%;
+	}
+}

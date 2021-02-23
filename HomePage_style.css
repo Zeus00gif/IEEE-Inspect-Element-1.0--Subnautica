@@ -1,0 +1,303 @@
+.home_title_image{
+	background: linear-gradient(rgba(22,181,242,0.1),rgba(0,0,0,0.3)), url('coral2.jpg');
+	background-position: center 80%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 105px;
+	padding-bottom: 20px;
+	border-bottom: 3px solid #000;
+}
+
+.home_page_title{
+	color: #fff;
+	padding-left: 10%;
+	font-size: 400%;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.home_car_cap{
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.home_car_cap_title1{
+  font-size: 300%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 15px #000;
+}
+
+.home_car_cap_title2{
+  font-size: 400%;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 15px #000;
+}
+
+.home_car_btn{
+	width: 40%;
+	font-size: 170%;
+	border-radius: 10px;
+}
+
+.home_to_aboutus {
+	border-radius: 0;
+	background: #000;
+	margin-bottom: 0;
+	/*background: url('texture7.jpg');
+	background-position: center 80%;
+	background-repeat: no-repeat;
+	background-size: cover;*/
+}
+
+.home_to_abotus_title{
+	font-size: 400%;
+	font-weight: bold;
+	background: /*#007bff*/#ffc107;
+	border-radius: 30px;
+	width: 50%;
+	/*color: #fff;*/
+}
+
+.home_to_abotus_text{
+	font-size: 180%;
+	color: #fff;
+}
+
+.home_knowmore_box{
+	border: 10px solid #fff;
+}
+
+.home_knowmore_text{
+	font-size: 150%;
+	color: #fff;
+}
+
+.connect_row{
+	background: linear-gradient(rgba(22,181,242,0.1),rgba(0,0,0,0.3)), url('texture7.jpg');
+	background-position: center 80%;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.social a{
+  font-size: 400%;
+  padding: 3%;
+}
+
+.fa-facebook{
+  color: #fff;
+}
+
+.fa-twitter{
+  color: #fff;
+}
+
+.fa-instagram{
+  color: #fff;
+}
+
+.fa-google-plus-g{
+  color: #fff;
+}
+
+.fa-youtube{
+  color: #fff;
+}
+
+.fa-facebook:hover, .fa-twitter:hover, .fa-instagram:hover, .fa-google-plus-g:hover, .fa-youtube:hover{
+  color: #d5d5d5;
+}
+
+.footerclass{
+  background-color: #000;
+  color: #fff;
+  padding-top: 2%;
+
+}
+
+.light{
+  border-top: 1px solid #d5d5d5;
+  width: 75%; 
+}
+
+.endlight{
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+}
+
+@media(max-width: 1210px){
+	.home_car_cap{
+		top: 50%;
+	}
+
+	.home_car_cap_title1{
+		font-size: 250%;
+	}
+
+	.home_car_cap_title2{
+		font-size: 350%;
+	}
+
+	.home_to_abotus_title{
+		font-size: 350%;
+	}
+
+	.home_to_abotus_text{
+		font-size: 160%;
+	}
+}
+
+@media(max-width: 1000px){
+	.home_page_title{
+		font-size: 350%;
+	}
+
+	.home_car_cap{
+		top: 45%;
+	}
+
+	.home_car_cap_title1{
+		font-size: 150%;
+	}
+
+	.home_car_cap_title2{
+		font-size: 250%;
+	}
+
+	.home_to_abotus_title{
+		font-size: 250%;
+	}
+
+	.home_to_abotus_text{
+		font-size: 120%;
+	}
+
+	.home_car_btn{
+		font-size: 130%;
+	}
+}
+
+@media(max-width: 772px){
+	.home_page_title{
+		font-size: 300%;
+	}
+
+	.home_car_cap{
+		top: 45%;
+	}
+
+	.home_car_cap_title1{
+		font-size: 130%;
+	}
+
+	.home_car_cap_title2{
+		font-size: 200%;
+	}
+
+	.home_to_abotus_title{
+		font-size: 200%;
+	}
+
+	.home_to_abotus_text{
+		font-size: 130%;
+	}
+
+	.home_car_btn{
+		font-size: 110%;
+	}
+}
+
+@media(max-width: 625px){
+
+	.home_car_cap{
+		top: 40%;
+	}
+
+	.home_car_cap_title1{
+		font-size: 110%;
+	}
+
+	.home_car_cap_title2{
+		font-size: 150%;
+	}
+
+	.home_car_btn{
+		font-size: 90%;
+	}
+
+	.home_to_abotus_title{
+		font-size: 170%;
+	}
+}
+
+@media(max-width: 508px){
+	
+	.home_car_cap{
+		top: 35%;
+	}
+
+	.home_car_cap_title1{
+		font-size: 100%;
+	}
+
+	.home_car_cap_title2{
+		font-size: 130%;
+	}
+
+	.home_car_btn{
+		font-size: 80%;
+		width: 60%;
+	}
+
+	.home_to_abotus_title{
+		font-size: 170%;
+	}
+
+	.home_to_abotus_text{
+		font-size: 120%;
+	}
+}
+
+@media(max-width: 416px){
+	.home_car_cap{
+		top: 45%;
+	}
+
+	.home_car_cap_title1{
+		font-size: 0;
+	}
+
+	.home_car_cap_title2{
+		font-size: 0;
+	}
+
+	.home_car_btn{
+		font-size: 80%;
+		width: 60%;
+	}
+
+	.home_to_abotus_title{
+		font-size: 130%;
+	}
+
+	.home_to_abotus_text{
+		font-size: 110%;
+	}
+	.home_page_title{
+		font-size: 250%;
+	}
+}
+
+@media(max-width: 330px){
+	.home_car_cap{
+		top: 40%;
+	}
+	.home_car_btn{
+		width: 80%;
+	}
+	.home_to_abotus_title{
+		width: 100%;
+	}
+}

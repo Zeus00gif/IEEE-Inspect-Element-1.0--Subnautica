@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html class="scrollsmooth" lang="en-US">
+<head>
+	<title>Buy Watercraft</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+    <!-- //Meta tag Keywords -->
+    
+    <!-- Bootstrap -->
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="PagesStyle.css">
+    
+    <!-- Google Fonts -->
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <script type="text/javascript">
+
+    	// ---------Responsive-navbar-active-animation-----------
+		function test(){
+		  var tabsNewAnim = $('#navbarSupportedContent');
+		  var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+		  var activeItemNewAnim = tabsNewAnim.find('.active');
+		  var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+		  var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+		  var itemPosNewAnimTop = activeItemNewAnim.position();
+		  var itemPosNewAnimLeft = activeItemNewAnim.position();
+		  $(".hori-selector").css({
+		    "top":itemPosNewAnimTop.top + "px", 
+		    "left":itemPosNewAnimLeft.left + "px",
+		    "height": activeWidthNewAnimHeight + "px",
+		    "width": activeWidthNewAnimWidth + "px"
+		  });
+		  $("#navbarSupportedContent").on("click","li",function(e){
+		    $('#navbarSupportedContent ul li').removeClass("active");
+		    $(this).addClass('active');
+		    var activeWidthNewAnimHeight = $(this).innerHeight();
+		    var activeWidthNewAnimWidth = $(this).innerWidth();
+		    var itemPosNewAnimTop = $(this).position();
+		    var itemPosNewAnimLeft = $(this).position();
+		    $(".hori-selector").css({
+		      "top":itemPosNewAnimTop.top + "px", 
+		      "left":itemPosNewAnimLeft.left + "px",
+		      "height": activeWidthNewAnimHeight + "px",
+		      "width": activeWidthNewAnimWidth + "px"
+		    });
+		  });
+		}
+
+
+		function dark_mode(toggleid){
+			var toggle=document.getElementById(toggleid);
+			if(toggle.checked){
+				$('.title_image').css('background','linear-gradient(rgba(22,181,242,0.3),rgba(255,255,255,0.2)), url(\'coral2.jpg\')');
+				$('.title_text').css('color','#000');
+				$('.category_row').css('background-color','#fff');
+				$('.category_title').css('color','#dc3545');
+				$('.category_class').css('color','#000');
+				$('.footerclass').css('background-color','#fff');
+				$('.footerclass').css('color','#000');
+				$('.light').css('border-top','1px solid #000');
+				document.getElementById('dark').innerHTML='Dark Mode';
+			}
+			else{
+				$('.title_image').css('background','linear-gradient(rgba(22,181,242,0.2),rgba(0,0,0,0.5)), url(\'coral2.jpg\')');
+				$('.title_text').css('color','#fff');
+				$('.category_row').css('background-color','#000');
+				$('.category_title').css('color','#FFA23D');
+				$('.category_class').css('color','#fff');
+				$('.footerclass').css('background-color','#000');
+				$('.footerclass').css('color','#fff');
+				$('.light').css('border-top','1px solid #d5d5d5');
+				document.getElementById('dark').innerHTML='Light Mode';
+			}
+		}
+
+    	
+    	function checkbox_change(){
+    		var tidal=document.getElementById('tidal_zone');
+    		var twilight=document.getElementById('twilight_zone');
+    		var midnight=document.getElementById('midnight_zone');
+    		var seabed=document.getElementById('seabed');
+    		if (tidal.checked||twilight.checked||midnight.checked||seabed.checked) {
+    			if (tidal.checked&&twilight.checked&&midnight.checked&&seabed.checked) {
+    				$('.common_card_class').css('display','block');
+    			}
+    			else{
+    				var com_card_cls=document.getElementsByClassName('common_card_class');
+    				var category;
+    				for(var i=0; i<com_card_cls.length;i++){
+    					category=com_card_cls[i].getAttribute('category');
+    					if (document.getElementById(category).checked) {
+    						com_card_cls[i].style.display='block';
+    					}
+    					else{
+    						com_card_cls[i].style.display='none';
+    					}
+    				}
+    			}
+    		}
+    		else{
+    			$('.common_card_class').css('display','block');
+    		}
+    	}
+
+    	function details_display(detailsid){
+    		$('.common_details_class').css('display','none');
+    		document.getElementById(detailsid).style.display='flex';
+    		document.getElementById(detailsid).scrollIntoView();
+    	}
+
+    	function order_details_display(ordersectionid,detailsnameid){
+    		$('.category_row').css('display','none');
+    		$('.cards_row').css('display','none');
+    		$('.common_details_class').css('display','none');
+    		document.getElementById(ordersectionid).style.display = 'flex';
+    		document.getElementById(ordersectionid).scrollIntoView();
+
+    		var details_name=document.getElementById(detailsnameid);
+    		var wc_category=document.getElementById('wc_category');
+    		var wc_name=document.getElementById('wc_name');
+    		var wc_charge=document.getElementById('wc_charge');
+    		var ins_charge=document.getElementById('ins_charge');
+    		var total_charge=document.getElementById('total_charge');
+    		var og_wc_charge=document.getElementsByClassName('same');
+    		var og_wc;
+    		var og_ins;
+    		var og_ins_charge=document.getElementsByClassName('samf');
+
+    		var new_category;
+    		var new_name;
+
+    		var wc_charge_value=0;
+    		var ins_charge_value=0;
+    		for(var i=0; i<og_wc_charge.length; i++){
+    			og_wc=og_wc_charge[i].getAttribute('wc_charge');
+    			if (detailsnameid==og_wc) {
+    				wc_charge.textContent=og_wc_charge[i].textContent;
+    				ins_charge.textContent=og_ins_charge[i].textContent;
+    				var x=og_wc_charge[i].textContent;
+    				var y=og_ins_charge[i].textContent;
+    				wc_charge_value=parseInt(x, 10);
+    				ins_charge_value=parseInt(y, 10);
+    				var z=wc_charge_value+ins_charge_value;
+    				total_charge.textContent=z;
+    				console.log(total_charge.textContent);
+    			}
+    		}
+    		switch (details_name) {
+    			case tidal_detail1:
+    				new_category='Tidal Zone';
+    				new_name='Cruise';
+    				break;
+    			case tidal_detail2:
+    				new_category='Tidal Zone';
+    				new_name='Battleship';
+    				break;
+    			case tidal_detail3:
+    				new_category='Tidal Zone';
+    				new_name='The Amphibian';
+    				break;
+    			case twilight_detail1:
+    				new_category='Twilight Zone';
+    				new_name='The Explorer';
+    				break;
+    			case twilight_detail2:
+    				new_category='Twilight Zone';
+    				new_name='The Collector';
+    				break;
+    			case midnight_detail1:
+    				new_category='Midnight Zone';
+    				new_name='Submarine';
+    				break;
+    			case midnight_detail2:
+    				new_category='Midnight Zone';
+    				new_name='Nautilus';
+    				break;
+    			case seabed_detail1:
+    				new_category='Seabed Zone';
+    				new_name='The Miner';
+    				break;
+    			default:
+    				console.log('Error! name and category did not get updated');
+    				break;
+    		}
+
+    		var x=document.getElementById('title1');
+	    	var y=document.getElementById('title2');
+	    	x.textContent='Your Order';
+	    	y.textContent='';
+
+    		wc_category.textContent= new_category;
+    		wc_name.textContent=new_name;
+
+    	}
+
+    	function access(){
+    		$('.acc_table_class').css('display','none');
+    		var access_radar=document.getElementById('radar');
+			var access_drone=document.getElementById('drone'); 
+			var access_excavator=document.getElementById('excavator');
+			var radar_charge=parseInt(document.getElementById('radarid').textContent,10);
+			var drone_charge=parseInt(document.getElementById('droneid').textContent,10);
+			var excavator_charge=parseInt(document.getElementById('excavatorid').textContent, 10);
+			
+			var access_total=0;
+			var access_charge=document.getElementById('acc_charge');
+			var wc_charge=parseInt(document.getElementById('wc_charge').textContent,10);
+			var ins_charge=parseInt(document.getElementById('ins_charge').textContent,10);
+			var total_charge=wc_charge+ins_charge;
+
+			if (access_radar.checked||access_drone.checked||access_excavator.checked) {
+				if (access_radar.checked&&access_drone.checked&&access_excavator.checked) {
+					access_total=radar_charge+drone_charge+excavator_charge;
+					access_charge.textContent=access_total;
+					$('.acc_table_class').css('display','table-row');
+					total_charge+=access_total;
+					document.getElementById('total_charge').textContent=total_charge;
+					console.log(document.getElementById('total_charge').textContent);
+				}
+				else{
+					var chargearray=[radar_charge,drone_charge,excavator_charge];
+					var sum=0;
+					var common_access_cl=document.getElementsByClassName('common_accessories_class');
+					for(var i=0; i<common_access_cl.length; i++) {
+						if (common_access_cl[i].checked) {
+							sum+=chargearray[i];
+						}
+					}
+					access_charge.textContent=sum;
+					$('.acc_table_class').css('display','table-row');
+					total_charge+=sum;
+					document.getElementById('total_charge').textContent=total_charge;
+				}
+			}
+			else{
+				access_total=0;
+				access_charge.textContent=access_total;
+				total_charge+=access_total;
+				document.getElementById('total_charge').textContent=total_charge;
+			}
+    	}
+
+    	function receipt_generate(receiptid){
+    		$('.order_section').css('display','none');
+    		document.getElementById(receiptid).style.display='flex';
+    		document.getElementById(receiptid).scrollIntoView();
+
+    		var com_order_cl=document.getElementsByClassName('common_order_class');
+    		var com_gen_cl=document.getElementsByClassName('gen_det_class');
+    		var com_gen_val;
+    		var com_order_val;
+    		for(var i=0; i<com_order_cl.length; i++){
+    			com_gen_val=com_gen_cl[i].getAttribute('gen_details');
+
+    			com_order_val=com_order_cl[i].getAttribute('name');
+
+    			if (com_gen_val==com_order_val) {
+    				com_gen_cl[i].textContent=com_order_cl[i].value;
+    			}
+    		}
+
+    		var access_billing=document.getElementsByClassName('accessories_gen_same');
+    		var common_access_cl=document.getElementsByClassName('common_accessories_class');
+			var acc_check_array=['Radar','Drone','Excavator'];
+			var c=0;
+			for(var i=0; i<common_access_cl.length; i++){
+				
+				if (common_access_cl[i].checked) {
+					access_billing[i].textContent=acc_check_array[i];
+					console.log(access_billing[i].textContent);
+				}
+				else{
+					c+=1;
+				}
+			}
+			if (c==3) {
+				$('.accessories_generate_col').css('display','none');
+				$('.acc_table_class').css('display','none');
+			}
+
+			var bill_details=document.getElementsByClassName('generate_charges');
+			var order_details=document.getElementsByClassName('watercraft_charges');
+			for(var i=0; i<order_details.length; i++){
+				bill_details[i].textContent=order_details[i].textContent;
+			}
+
+			var x=document.getElementById('title1');
+	    	var y=document.getElementById('title2');
+	    	x.textContent='Order Successful';
+	    	y.textContent='';
+
+    		return false;
+    	}
+
+    </script>
+
+</head>
+<body >
+	<nav class="navbar navbar-expand-lg navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="#"><b><h4>The Ark</h4></b></a></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Watercrafts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AboutUsPage.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+	<div class="container-fluid">
+		<div class="row  title_row title_image">
+			
+			<div id="google_translate_element" class="ml-auto" style="float: right;"></div>
+			<script>
+				function googleTranslateElementInit() {
+					new google.translate.TranslateElement(
+						{pageLanguage: 'en'},
+						'google_translate_element'
+					);
+				}
+			</script>
+			<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+			<div class="dark_mode_section">
+				<label class="switch">
+  					<input type="checkbox" id="dark_mode_id" onchange="dark_mode('dark_mode_id')">
+  					<span class="slider round"></span>
+				</label>
+			</div>
+			<p style="color: #fff;" class="p-1"><b id="dark">Light Mode</b></p>
+			<div class="col-12">
+				<div class="title_text text-left">
+					<p><span id="title1">A Quick Glance At Our Products</span></p>
+					<p><small><span id="title2">....satisfaction guaranteed</span></small></p>
+				</div>
+			</div>
+		</div>
+		<div class="row category_row">
+			<div class="col-12 text-center">
+				<div class="category_class">
+					<div class="category_title">
+						<b>Categories:</b>
+					</div>
+					<span class="d-inline-block p-2"><input type="checkbox" name="tidal_zone" id="tidal_zone" onchange="checkbox_change()">
+					<b><label for="tidal_zone" class="checkbox_text">Tidal Zone</label></b></span>
+
+					<span class="d-inline-block p-2"><input type="checkbox" name="twilight_zone" id="twilight_zone" onchange="checkbox_change()">
+					<b><label for="twilight_zone" class="checkbox_text">Twilight Zone</label></b></span>
+
+					<span class="d-inline-block p-2"><input type="checkbox" name="midnight_zone" id="midnight_zone" onchange="checkbox_change()">
+					<b><label for="midnight_zone" class="checkbox_text">Midnight Zone</label></b></span>
+
+					<span class="d-inline-block p-2"><input type="checkbox" name="seabed" id="seabed" onchange="checkbox_change()">
+					<b><label for="seabed" class="checkbox_text">Seabed</label></b></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="buynowpage_bg">
+		<div class="container">
+			<div class="row cards_row">
+				<!--TIDAL 1 -->
+				<div class="col-lg-4 col-md-6 col-12 text-center common_card_class" category="tidal_zone">
+					<div class="card card_props">
+						<div class="card-title card_title_div">
+							<b><span class="card_title_text">Cruise Ship</span></b>
+						</div>
+						<div class="card-img card_image_prop">
+							<img src="tidal1_cruise.jpg " class="img-fluid w-100">
+						</div>
+						<div class="card-text ">
+							<div class="p-2">
+								<button type="submit" class="btn card_button " onclick="details_display('tidal_detail1')"><b>Know More</b></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- TIDAL 2 -->
+				<div class="col-lg-4 col-md-6 col-12 text-center common_card_class" category="tidal_zone">
+					<div class="card card_props">
+						<div class="card-title card_title_div">
+							<b><span class="card_title_text">Battleship</span></b>
+						</div>
+						<div class="card-img card_image_prop">
+							<img src="tidal2_battleship.jpg " class="img-fluid w-100">
+						</div>
+						<div class="card-text ">
+							<div class="p-2">
+								<button type="submit" class="btn card_button " onclick="details_display('tidal_detail2')"><b>Know More</b></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- TIDAL 3 -->
+				<div class="col-lg-4 col-md-6 col-12 text-center common_card_class" category="tidal_zone">
+					<div class="card card_props">
+						<div class="card-title card_title_div">
+							<b><span class="card_title_text">The Amphibian</span></b>
+						</div>
+						<div class="card-img card_image_prop">
+							<img src="tidal3_hovercraft.jpg " class="img-fluid w-100">
+						</div>
+						<div class="card-text ">
+							<div class="p-2">
+								<button type="submit" class="btn card_button " onclick="details_display('tidal_detail3')"><b>Know More</b></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- TWILIGHT 1 -->
+				<div class="col-lg-4 col-md-6 col-12 text-center common_card_class" category="twilight_zone">
+					<div class="card card_props">
+						<div class="card-title card_title_div">
+							<b><span class="card_title_text">The Explorer</span></b>
+						</div>
+						<div class="card-img card_image_prop">
+							<img src="twilight1_explorer.jpg " class="img-fluid w-100">
+						</div>
+						<div class="card-text ">
+							<div class="p-2">
+								<button type="submit" class="btn card_button " onclick="details_display('twilight_detail1')"><b>Know More</b></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- TWILIGHT 2 -->
+				<div class="col-lg-4 col-md-6 col-12 text-center common_card_class" category="twilight_zone">
+					<div class="card card_props">
+						<div class="card-title card_title_div">
+							<b><span class="card_title_text">The Collector</span></b>
+						</div>
+						<div class="card-img card_image_prop">
+							<img src="twilight2_collector.jpg " class="img-fluid w-100">
+						</div>
+						<div class="card-text ">
+							<div class="p-2">
+								<button type="submit" class="btn card_button " onclick="details_display('twilight_detail2')"><b>Know More</b></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- MIDNIGHT 1 -->
+				<div class="col-lg-4 col-md-6 col-12 text-center common_card_class" category="midnight_zone">
+					<div class="card card_props">
+						<div class="card-title card_title_div">
+							<b><span class="card_title_text">Submarine</span></b>
+						</div>
+						<div class="card-img card_image_prop">
+							<img src="midnight1_submarine.jpg " class="img-fluid w-100">
+						</div>
+						<div class="card-text ">
+							<div class="p-2">
+								<button type="submit" class="btn card_button " onclick="details_display('midnight_detail1')"><b>Know More</b></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- MIDNIGHT 2 -->
+				<div class="col-lg-4 col-md-6 col-12 text-center common_card_class" category="midnight_zone">
+					<div class="card card_props">
+						<div class="card-title card_title_div">
+							<b><span class="card_title_text">Nautilus</span></b>
+						</div>
+						<div class="card-img card_image_prop">
+							<img src="midnight2_nautilus.jpg " class="img-fluid w-100">
+						</div>
+						<div class="card-text ">
+							<div class="p-2">
+								<button type="submit" class="btn card_button " onclick="details_display('midnight_detail2')"><b>Know More</b></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- SEABED 1 -->
+				<div class="col-lg-4 col-md-6 col-12 text-center common_card_class" category="seabed">
+					<div class="card card_props">
+						<div class="card-title card_title_div">
+							<b><span class="card_title_text">The Miner</span></b>
+						</div>
+						<div class="card-img card_image_prop">
+							<img src="seabed1_miner.jpg" class="img-fluid w-100">
+						</div>
+						<div class="card-text ">
+							<div class="p-2">
+								<button type="submit" class="btn card_button " onclick="details_display('seabed_detail1')"><b>Know More</b></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- DETAILS SECTION -->
+			<!-- TIDAL 1 -->
+			<div class="row common_details_class " id="tidal_detail1">
+				<div class="col-12 text-center details_title_col ">
+					<h1 class="details_title">Cruise Ship</h1>
+				</div>
+				<div class="col-md-6 col-12 text-left  features_col">
+					<div  class="features_section">
+						<h4 class="details_features_text">Features:</h4>
+						<ul class="details_features_ul">
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Smart travel-friendly technologies</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Robot Bartenders</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Drone docks on balconies, drone ambulances, frone airport </li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Biometric door locks and check-in systems, biometric purchases(digital identification)</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-md-block d-none detail_image_col">
+					<div class="detail_image_div">
+						<img src="tidal1_cruise.jpg " class="img-fluid w-100 detail_image">
+					</div>
+				</div>
+				<div class="col-md-8 col-12 text-center details_gallery_col">
+					<div class="details_gallery">	
+						<h2>Gallery</h2>
+					</div>
+					<div id="slides1" class="carousel slide carousel_details" data-ride="carousel">
+						<ul class="carousel-indicators">
+						    <li data-target="#slides1" data-slide-to="0" class="active"></li>
+						    <li data-target="#slides1" data-slide-to="1"></li>
+						    <li data-target="#slides1" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+						    <div class="carousel-item active">
+						        <img class="img-fluid w-100" src="cruise_1.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="cruise_2.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="cruise_3.jpg">
+						    </div>
+						</div>
+	           		</div>	
+				</div>
+				<div class="col-md-4 col-12 final_details_col">
+					<div class="final_details">
+						<div class="price_details">
+							<h3>Price details:</h3>
+							<ul>
+								<li class="final_details_list">Watercraft Charges: <span class="same" wc_charge="tidal_detail1">150000</span></li>
+								<li class="final_details_list">Insurance Charges: <span class="samf" ins_charge="tidal_detail1">4000</span></li>
+							</ul>
+						</div><br/>
+						<div class="buynow_button_div text-center">
+							<button class="btn btn-outline-info buynow_button" onclick="order_details_display('order_id','tidal_detail1')">
+							Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- TIDAL 2 -->
+			<div class="row common_details_class" id="tidal_detail2">
+				<div class="col-12 text-center details_title_col">
+					<h1 class="details_title">Battleship</h1>
+				</div>
+				<div class="col-md-6 col-12 text-left  features_col">
+					<div  class="features_section">
+						<h4 class="details_features_text">Features:</h4>
+						<ul class="details_features_ul">
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Dual powerful guns</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Heavy armour, lightweight with high durability</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Underwater Protection with fairly high speed, highly enables AI systems for piloting</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Great cruising radius, general seaworthiness</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-md-block d-none detail_image_col">
+					<div class="detail_image_div">
+						<img src="tidal2_battleship.jpg " class="img-fluid w-100 detail_image">
+					</div>
+				</div>
+				<div class="col-md-8 col-12 text-center details_gallery_col">
+					<div class="details_gallery">	
+						<h2>Gallery</h2>
+					</div>
+					<div id="slides2" class="carousel slide carousel_details" data-ride="carousel">
+						<ul class="carousel-indicators">
+						    <li data-target="#slides2" data-slide-to="0" class="active"></li>
+						    <li data-target="#slides2" data-slide-to="1"></li>
+						    <li data-target="#slides2" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+						    <div class="carousel-item active">
+						        <img class="img-fluid w-100" src="battleship_1.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="battleship_2.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="battleship_3.jpg">
+						    </div>
+						</div>
+	           		</div>	
+				</div>
+				<div class="col-md-4 col-12 final_details_col">
+					<div class="final_details">
+						<div class="price_details">
+							<h3>Price details:</h3>
+							<ul>
+								<li class="final_details_list">Watercraft Charges: <span class="same" wc_charge="tidal_detail2">200000</span></li>
+								<li class="final_details_list">Insurance Charges: <span class="samf" ins_charge="tidal_detail2">5000</span></li>
+							</ul>
+						</div><br/>
+						<div class="buynow_button_div text-center">
+							<button class="btn btn-outline-info buynow_button" onclick="order_details_display('order_id','tidal_detail2')">
+							Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- TIDAL 3 -->
+			<div class="row common_details_class" id="tidal_detail3">
+				<div class="col-12 text-center details_title_col">
+					<h1 class="details_title">The Amphibian</h1>
+				</div>
+				<div class="col-md-6 col-12 text-left  features_col">
+					<div  class="features_section">
+						<h4 class="details_features_text">Features:</h4>
+						<ul class="details_features_ul">
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Comes with highly compressed air cushions</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Amphibious, thus can move on land upto some extent</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Shock absorbers included</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Duo engines</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-md-block d-none detail_image_col">
+					<div class="detail_image_div">
+						<img src="tidal3_hovercraft.jpg " class="img-fluid w-100 detail_image">
+					</div>
+				</div>
+				<div class="col-md-8 col-12 text-center details_gallery_col">
+					<div class="details_gallery">	
+						<h2>Gallery</h2>
+					</div>
+					<div id="slides3" class="carousel slide carousel_details" data-ride="carousel">
+						<ul class="carousel-indicators">
+						    <li data-target="#slides3" data-slide-to="0" class="active"></li>
+						    <li data-target="#slides3" data-slide-to="1"></li>
+						    <li data-target="#slides3" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+						    <div class="carousel-item active">
+						        <img class="img-fluid w-100" src="hovercraft_1.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="hovercraft_2.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="hovercraft_3.jpg">
+						    </div>
+						</div>
+	           		</div>	
+				</div>
+				<div class="col-md-4 col-12 final_details_col">
+					<div class="final_details">
+						<div class="price_details">
+							<h3>Price details:</h3>
+							<ul>
+								<li class="final_details_list">Watercraft Charges: <span class="same" wc_charge="tidal_detail3">350000</span></li>
+								<li class="final_details_list">Insurance Charges: <span class="samf" ins_charge="tidal_detail3">8750</span></li>
+							</ul>
+						</div><br/>
+						<div class="buynow_button_div text-center">
+							<button class="btn btn-outline-info buynow_button " onclick="order_details_display('order_id','tidal_detail3')">
+							Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- TWILIGHT 1 -->
+			<div class="row common_details_class" id="twilight_detail1">
+				<div class="col-12 text-center details_title_col">
+					<h1 class="details_title">The Explorer</h1>
+				</div>
+				<div class="col-md-6 col-12 text-left  features_col">
+					<div  class="features_section">
+						<h4 class="details_features_text">Features:</h4>
+						<ul class="details_features_ul">
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Enhanced 360 degree viewing for great experience</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Hi-speed robot operated for better navigation</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Toughened glass to safeguard from predators</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Infra-red high definition cameras</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-md-block d-none detail_image_col">
+					<div class="detail_image_div">
+						<img src="twilight1_explorer.jpg " class="img-fluid w-100 detail_image">
+					</div>
+				</div>
+				<div class="col-md-8 col-12 text-center details_gallery_col">
+					<div class="details_gallery">	
+						<h2>Gallery</h2>
+					</div>
+					<div id="slides4" class="carousel slide carousel_details" data-ride="carousel">
+						<ul class="carousel-indicators">
+						    <li data-target="#slides4" data-slide-to="0" class="active"></li>
+						    <li data-target="#slides4" data-slide-to="1"></li>
+						    <li data-target="#slides4" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+						    <div class="carousel-item active">
+						        <img class="img-fluid w-100" src="explorer_1.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="explorer_2.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="explorer_3.jpg">
+						    </div>
+						</div>
+	           		</div>	
+				</div>
+				<div class="col-md-4 col-12 final_details_col">
+					<div class="final_details">
+						<div class="price_details">
+							<h3>Price details:</h3>
+							<ul>
+								<li class="final_details_list">Watercraft Charges: <span class="same" wc_charge="twilight_detail1">400000</span></li>
+								<li class="final_details_list">Insurance Charges: <span class="samf" ins_charge="twilight_detail1">10000</span></li>
+							</ul>
+						</div><br/>
+						<div class="buynow_button_div text-center">
+							<button class="btn btn-outline-info buynow_button" onclick="order_details_display('order_id','twilight_detail1')">
+							Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- TWILIGHT 2 -->
+			<div class="row common_details_class" id="twilight_detail2">
+				<div class="col-12 text-center details_title_col">
+					<h1 class="details_title">The Collector</h1>
+				</div>
+				<div class="col-md-6 col-12 text-left  features_col">
+					<div  class="features_section">
+						<h4 class="details_features_text">Features:</h4>
+						<ul class="details_features_ul">
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Corrosion-free light metal body</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Programmed arms with all round rotaion system</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Embedded magnets in arms to attract metal garbage</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Equiped with a variety of sensors</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-md-block d-none detail_image_col">
+					<div class="detail_image_div">
+						<img src="twilight2_collector.jpg " class="img-fluid w-100 detail_image">
+					</div>
+				</div>
+				<div class="col-md-8 col-12 text-center details_gallery_col">
+					<div class="details_gallery">	
+						<h2>Gallery</h2>
+					</div>
+					<div id="slides5" class="carousel slide carousel_details" data-ride="carousel">
+						<ul class="carousel-indicators">
+						    <li data-target="#slides5" data-slide-to="0" class="active"></li>
+						    <li data-target="#slides5" data-slide-to="1"></li>
+						    <li data-target="#slides5" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+						    <div class="carousel-item active">
+						        <img class="img-fluid w-100" src="collector_1.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="collector_2.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="collector_3.jpg">
+						    </div>
+						</div>
+	           		</div>	
+				</div>
+				<div class="col-md-4 col-12 final_details_col">
+					<div class="final_details">
+						<div class="price_details">
+							<h3>Price details:</h3>
+							<ul>
+								<li class="final_details_list">Watercraft Charges: <span class="same" wc_charge="twilight_detail2">500000</span></li>
+								<li class="final_details_list">Insurance Charges: <span class="samf" ins_charge="twilight_detail2">12500</span></li>
+							</ul>
+						</div><br/>
+						<div class="buynow_button_div text-center">
+							<button class="btn btn-outline-info buynow_button" onclick="order_details_display('order_id','twilight_detail2')">
+							Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- MIDNIGHT 1 -->
+			<div class="row common_details_class" id="midnight_detail1">
+				<div class="col-12 text-center details_title_col">
+					<h1 class="details_title">Submarine</h1>
+				</div>
+				<div class="col-md-6 col-12 text-left  features_col">
+					<div  class="features_section">
+						<h4 class="details_features_text">Features:</h4>
+						<ul class="details_features_ul">
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Made for all tropics</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Superior stealth and ability to launch crippling attacks with precision-guided weapons</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>The hull form, fin and hydroplanes are specifically designed to produce minimum underwater resistance</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Scorpene submarines can undertake various missions such as anti-surface warfare, anti-submarine warfare, intelligence gathering, mine laying and area surveillance.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-md-block d-none detail_image_col">
+					<div class="detail_image_div">
+						<img src="midnight1_submarine.jpg " class="img-fluid w-100 detail_image">
+					</div>
+				</div>
+				<div class="col-md-8 col-12 text-center details_gallery_col">
+					<div class="details_gallery">	
+						<h2>Gallery</h2>
+					</div>
+					<div id="slides6" class="carousel slide carousel_details" data-ride="carousel">
+						<ul class="carousel-indicators">
+						    <li data-target="#slides6" data-slide-to="0" class="active"></li>
+						    <li data-target="#slides6" data-slide-to="1"></li>
+						    <li data-target="#slides6" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+						    <div class="carousel-item active">
+						        <img class="img-fluid w-100" src="subamarine_1.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="submarine_2.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="submarine_3.jpg">
+						    </div>
+						</div>
+	           		</div>	
+				</div>
+				<div class="col-md-4 col-12 final_details_col">
+					<div class="final_details">
+						<div class="price_details">
+							<h3>Price details:</h3>
+							<ul>
+								<li class="final_details_list">Watercraft Charges: <span class="same" wc_charge="midnight_detail1">650000</span></li>
+								<li class="final_details_list">Insurance Charges: <span class="samf" ins_charge="midnight_detail1">16250</span></li>
+							</ul>
+						</div><br/>
+						<div class="buynow_button_div text-center">
+							<button class="btn btn-outline-info buynow_button" onclick="order_details_display('order_id','midnight_detail1')">
+							Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- MIDNIGHT 2 -->
+			<div class="row common_details_class" id="midnight_detail2">
+				<div class="col-12 text-center details_title_col">
+					<h1 class="details_title">Nautilus</h1>
+				</div>
+				<div class="col-md-6 col-12 text-left  features_col">
+					<div  class="features_section">
+						<h4 class="details_features_text">Features:</h4>
+						<ul class="details_features_ul">
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Uses jet propulsion to roam the ocean deep</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>It's beauty and swimming speed is beyond compare</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Double-hulled, and is further separated into water-tight compartments</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Nautilus uses floodable tanks in order to adjust buoyancy and so control its depth. The pumps that evacuate these tanks of water are so powerful that they produce large jets of water when the vessel emerges rapidly from the surface of the water</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-md-block d-none detail_image_col">
+					<div class="detail_image_div">
+						<img src="midnight2_nautilus.jpg " class="img-fluid w-100 detail_image">
+					</div>
+				</div>
+				<div class="col-md-8 col-12 text-center details_gallery_col">
+					<div class="details_gallery">	
+						<h2>Gallery</h2>
+					</div>
+					<div id="slides7" class="carousel slide carousel_details" data-ride="carousel">
+						<ul class="carousel-indicators">
+						    <li data-target="#slides7" data-slide-to="0" class="active"></li>
+						    <li data-target="#slides7" data-slide-to="1"></li>
+						    <li data-target="#slides7" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+						    <div class="carousel-item active">
+						        <img class="img-fluid w-100" src="nautilus_1.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="nautilus_2.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="nautilus_3.jpg">
+						    </div>
+						</div>
+	           		</div>	
+				</div>
+				<div class="col-md-4 col-12 final_details_col">
+					<div class="final_details">
+						<div class="price_details">
+							<h3>Price details:</h3>
+							<ul>
+								<li class="final_details_list">Watercraft Charges: <span class="same" wc_charge="midnight_detail2">750000</span></li>
+								<li class="final_details_list">Insurance Charges: <span class="samf" ins_charge="midnight_detail2">18750</span></li>
+							</ul>
+						</div><br/>
+						<div class="buynow_button_div text-center">
+							<button class="btn btn-outline-info buynow_button" onclick="order_details_display('order_id','midnight_detail2')">
+							Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SEABED 1 -->
+			<div class="row common_details_class" id="seabed_detail1">
+				<div class="col-12 text-center details_title_col">
+					<h1 class="details_title">The Miner</h1>
+				</div>
+				<div class="col-md-6 col-12 text-left  features_col">
+					<div  class="features_section">
+						<h4 class="details_features_text">Features:</h4>
+						<ul class="details_features_ul">
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Heavy duty mechanised structure</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>UV steering system to surpass seabed obstacles</li>
+							<li class="details_features_list"><i class="fa fa-caret-right" aria-hidden="true"></i>Environment friendly engineering solutions; causes no harm to the luminous sea creatures</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 d-md-block d-none detail_image_col">
+					<div class="detail_image_div">
+						<img src="seabed1_miner.jpg " class="img-fluid w-100 detail_image">
+					</div>
+				</div>
+				<div class="col-md-8 col-12 text-center details_gallery_col">
+					<div class="details_gallery">	
+						<h2>Gallery</h2>
+					</div>
+					<div id="slides8" class="carousel slide carousel_details" data-ride="carousel">
+						<ul class="carousel-indicators">
+						    <li data-target="#slides8" data-slide-to="0" class="active"></li>
+						    <li data-target="#slides8" data-slide-to="1"></li>
+						    <li data-target="#slides8" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+						    <div class="carousel-item active">
+						        <img class="img-fluid w-100" src="miner_1.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="miner_2.jpg">
+						    </div>
+						    <div class="carousel-item">
+						        <img class="img-fluid w-100" src="miner_3.jpg">
+						    </div>
+						</div>
+	           		</div>	
+				</div>
+				<div class="col-md-4 col-12 final_details_col">
+					<div class="final_details">
+						<div class="price_details">
+							<h3>Price details:</h3>
+							<ul>
+								<li class="final_details_list">Watercraft Charges: <span class="same" wc_charge="seabed_detail1">900000</span></li>
+								<li class="final_details_list">Insurance Charges: <span class="samf" ins_charge="seabed_detail1">22500</span></li>
+							</ul>
+						</div><br/>
+						<div class="buynow_button_div text-center">
+							<button class="btn btn-outline-info buynow_button" onclick="order_details_display('order_id','seabed_detail1')">
+							Buy Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ORDER NOW SECTION -->
+			<form onsubmit="return receipt_generate('generate_rcpt')">
+				<div class="row order_section" id="order_id">
+					<div class="col-12 text-center order_now_title_col">
+						<h1 class="order_now_title">Order Details</h1>
+					</div>
+					<div class="col-12 text-left watercraft_name_details_col">
+						<div class="watercraft_name_details">
+							<p class="watercraft_category_name"><b>Watercraft Category: </b><span id="wc_category">category</span></p>
+							<p class="watercraft_category_name"><b>Watercraft Name: </b><span id="wc_name">name</span></p>
+						</div>
+					</div>
+					<div class="col-12 detail_background_col">
+						<div class="row detail_background">
+							<div class="col-md-6 col-12 order_details_col">
+								<div class="order_details">
+									<label for="username">Username</label><br/>
+									<input  type="text" name="username" id="username" class="form-control common_order_class" autocomplete="off" required>
+									<div class="row">
+										<div class="col-sm-6 col-6">
+											<label for="age">Age</label><br/>
+											<input  type="number" name="age" id="age" class="form-control common_order_class" min="18" autocomplete="off" required>
+										</div>
+										<div class="col-md-6 col-6">
+											<label for="contact">Contact</label><br/>
+											<input  type="tel" name="contact" id="contact" class="form-control common_order_class" 
+											pattern="[+0-9][0-9\s]{9,14}" title="Please enter correct contact number" autocomplete="off" required>
+										</div>
+									</div>
+									<label for="email">Email</label><br/>
+									<input  type="email" name="email" id="email" class="form-control common_order_class" autocomplete="off" required>
+									<label for="residence">Residence</label><br/>
+									<input  type="text" name="residence" id="residence" class="form-control common_order_class" autocomplete="off" required>
+									<label for="city">City</label><br/>
+									<input  type="text" name="city" id="city" class="form-control common_order_class" autocomplete="off" required>
+									<label for="tectonic_plate">Tectonic Plate</label><br/>
+									<select name="tectonic_plate" id="tectonic_plate" class="form-control common_order_class" autocomplete="off" required>
+										<option id="Atlantis">Atlantis</option>
+										<option id="Mariana">Mariana</option>
+										<option id="Bermuda">Bermuda</option>
+										<option id="Titanic_Ruins">Titanic Ruins</option>
+										<option id="Binod_Dust">Binod Dust</option>
+										<option id="Bikini_Bottom">Bikini Bottom</option>
+									</select><br/>
+									<div class="accessories_input">
+										<b>Accessories:</b><br/>
+										<input  type="checkbox" name="radar" id="radar" class="pt-1 common_accessories_class" 
+										onchange="access()">
+										<label class=" pt-1 " for="radar">Radar: <span id="radarid">15000</span></label><br/>
+										<input  type="checkbox" name="drone" id="drone" class="pt-1 common_accessories_class" 
+										onchange="access()">
+										<label class=" pt-1 " for="drone">Drone: <span id="droneid">25000</span></label><br/>
+										<input  type="checkbox" name="excavator" id="excavator" class="pt-1  common_accessories_class" 
+										onchange="access()">
+										<label class=" pt-1 " for="excavator">Excavator: <span id="excavatorid">35000</span></label><br/>								
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-12 order_table_col">
+								<table class="table_detail">
+									<title class="table_title">Billing Details:</title>
+									<thead>
+										<tr class="tablethead">
+											<th >Term</th>
+											<th >Fee</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr >
+											<td>Watercraft charges</td>
+											<td><span class="watercraft_charges" id="wc_charge">0</span></td>
+										</tr>
+										<tr>
+											<td>Insurance charges</td>
+											<td><span class="watercraft_charges" id="ins_charge">0</span></td>
+										</tr>
+										<tr class="acc_table_class">
+											<td>Accessories charges</td>
+											<td><span class="watercraft_charges" id="acc_charge">0</span></td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr class="tablefoot">
+											<td>Total</td>
+											<td><span class="watercraft_charges" id="total_charge">0</span></td>
+										</tr>
+									</tfoot>
+								</table>
+								<div class="generate_recipt">
+									<input type="submit" class="btn btn-success generate_recipt_button" name="generate_recipt" 
+									id="generate_recipt" value="Generate Receipt">
+								</div>
+							</form>
+							<form onsubmit="setTimeout(function(){window.location.reload();},10);">
+								<div class="cancel_order">
+									<button type="submit" class="btn btn-danger cancel_order_button" id="cancel_order" name="cancel_order" 
+									>Go Back</button>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			<!-- RECEIPT GENERATION SECTION -->
+			<form onsubmit="setTimeout(function(){window.location.reload();},10);">
+				<div class="row generate_receipt" id="generate_rcpt">
+					<div class="col-12 generate_receipt_title_col text-center">
+						<div class="generate_receipt_title">
+							<b>Generated Receipt</b>
+						</div>
+					</div>
+					<div class="col-md-6 col-12 generate_receipt_details_col">
+						<div class="row generate_receipt_details_row">
+							<div class="col-12 d-block common_gen_det_class">
+								<p><b>Username: </b><span class="gen_det_class spanclass" gen_details="username">name</span></p>
+							</div>
+							<div class="col-6 common_gen_det_class">
+								<p><b>Age: </b><span class="gen_det_class spanclass" gen_details="age">age</span></p>
+							</div>
+							<div class="col-6 common_gen_det_class">
+								<p><b>Contact: </b><span class="gen_det_class spanclass" gen_details="contact">contact</span></p>
+							</div>
+							<div class="col-12 common_gen_det_class">
+								<p><b>Email: </b><span class="gen_det_class spanclass" gen_details="email">email</span></p>
+							</div>
+							<div class="col-12 common_gen_det_class">
+								<p><b>Residence: </b><span class="gen_det_class spanclass" gen_details="residence">residence</span></p>
+							</div>
+							<div class="col-12 common_gen_det_class">
+								<p><b>City: </b><span class="gen_det_class spanclass" gen_details="city">city</span></p>
+							</div>
+							<div class="col-12 common_gen_det_class">
+								<p><b>Tectonic Plate: </b><span class="gen_det_class spanclass" gen_details="tectonic_plate">tectonic plate</span></p>
+							</div>
+							<div class="col-12 accessories_generate_col">
+								<p><b>Accessories: </b></p>
+								<p><span class="accessories_gen_same spanclass" acc_id="radar"> </span></p>
+								<p><span class="accessories_gen_same spanclass" acc_id="drone"> </span></p>
+								<p><span class="accessories_gen_same spanclass" acc_id="excavator"> </span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-12 billing_generate_details">
+						<table class="table_detail">
+							<title class="table_title">Billing Details:</title>
+							<thead>
+								<tr class="tablegenthead">
+									<th >Term</th>
+									<th >Fee</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr >
+									<td>Watercraft charges</td>
+									<td><span class="generate_charges" id="wc_bill">0</span></td>
+								</tr>
+								<tr>
+									<td>Insurance charges</td>
+									<td><span class="generate_charges" id="ins_bill">0</span></td>
+								</tr>
+								<tr class="acc_table_class">
+									<td>Accessories charges</td>
+									<td><span class="generate_charges" id="acc_bill">0</span></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr class="tablegenfoot">
+									<td>Total</td>
+									<td><span class="generate_charges" id="total_bill">0</span></td>
+								</tr>
+							</tfoot>
+						</table>
+						<div class="col-12 goback_button_col">
+							<button  class="btn btn-light goback_button" id="goback" name="goback" >
+							Buy More!</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<footer class="footerclass h-auto">
+		<div class="container-fluid">
+			<div class="row text-center">
+				<div class="col-md-4">
+					<hr class="light"/>
+					<h5>Contacts</h5>
+					<hr class="light"/>
+					<p>999-999-999</p>
+					<p>abc@xyz.com</p>
+				</div>
+				<div class="col-md-4">
+					<hr class="light" />
+					<h5>Our Hours</h5>
+					<hr class="light" />
+					<p>Monday:10-12</p>
+					<p>Sunday:10-11</p>
+					<p>Tuesday:10-12</p>
+				</div>
+				<div class="col-md-4">
+					<hr class="light" />
+					<h5>Services</h5>
+					<hr class="light" />
+					<p>Atlantis</p>
+					<p>Binod Dust</p>
+					<p>Bikini Bottom</p>
+				</div>
+				<div class="col-12">
+					<hr class="endlight" />
+					<h5>&copy;Copyrights reserved</h5>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript">
+    	$(document).ready(function(){
+		  setTimeout(function(){ test(); });
+		});
+		$(window).on('resize', function(){
+		  setTimeout(function(){ test(); }, 500);
+		});
+		$(".navbar-toggler").click(function(){
+		  setTimeout(function(){ test(); });
+		});
+    </script>
+    
+
+</body>
+</html>
